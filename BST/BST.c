@@ -18,5 +18,35 @@ void insert(int key)
         p = (struct Node *)malloc(sizeof(struct Node));
         p->data = key;
         p->lchild = p->rchild = NULL;
+        return;
+    }
+
+    while (t != NULL)
+    {
+        r = t;
+        if (key < t->data)
+            t = t->lchild;
+        else if (key > t->data)
+            t = t->rchild;
+        else
+            return;
+    }
+
+    p = (struct Node *)malloc(sizeof(struct Node));
+    p->data = key;
+    p->lchild = p->rchild = NULL;
+    if (key < r->data)
+        r->lchild = p;
+    else
+        r->rchild = p;
+}
+
+void Inorder(struct Node *p)
+{
+    if (p)
+    {
+        Inorder(p->lchild);
+        printf("%d ", p->data);
+        Inorder(p->rchild);
     }
 }
