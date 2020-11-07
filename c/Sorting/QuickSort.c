@@ -46,9 +46,9 @@ void QuickSort(int A[], int l, int h)
 
 int main()
 {
-    int A[] = {11, 13, 7, 12, 16, 9, 24, 5, 10, 3, __INT32_MAX__}, n = 10, i;
+    int A[] = {11, 13, 7, 12, 16, 9, 24, 5, 10, 3, __INT32_MAX__}, n = 11, i;
 
-    QuickSort(A, 0, 10);
+    QuickSort(A, 0, n - 1);
 
     for (i = 0; i < 10; i++)
         printf("%d ", A[i]);
