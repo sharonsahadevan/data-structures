@@ -30,16 +30,32 @@ void BubbleSort(int A[], int n)
 void InsertionSort(int A[], int n)
 {
     int i, j, x;
+
     for (i = 1; i < n; i++)
     {
         j = i - 1;
         x = A[i];
-        while (j > -1 && A[j + 1] > x)
+        while (j > -1 && A[j] > x)
         {
             A[j + 1] = A[j];
             j--;
         }
         A[j + 1] = x;
+    }
+}
+
+void SelectionSort(int A[], int n)
+{
+    int i, j, k;
+
+    for (i = 0; i < n - 1; i++)
+    {
+        for (j = k = i; j < n; j++)
+        {
+            if (A[j] < A[k])
+                k = j;
+        }
+        swap(&A[i], &A[k]);
     }
 }
 void main()
